@@ -1,0 +1,94 @@
+{
+    "Billing": {
+      "required": [
+        "project_id",
+        "to_paid",
+        "to_get"
+      ],
+      "properties": {
+        "_id": {
+          "description": "Unique id of billing",
+          "type": "Object Id",
+          "format": "ObjectId"
+        },
+        "id": {
+          "description": "8 digit unique identifier of any document used by client user",
+          "type": "Integer",
+          "format": "ObjectId",
+          "example": 458712867,
+          "readOnly": true
+        },
+        "employee_id": {
+          "description": "8 digit unique identifier of employee",
+          "type": "Object Id",
+          "format": "ObjectId",
+          "update": "No",
+          "required": "No"
+        },
+        "project_id": {
+          "description": "8 digit unique identifier of project",
+          "type": "Object Id",
+          "format": "int32",
+          "update": "No",
+          "required": "No"
+        },
+        "to_paid": {
+          "description": "Total amount paid to admin",
+          "type": "Integer",
+          "format": "int32",
+          "example": 100,
+          "update": "No"
+        },
+        "to_get": {
+          "description": "Total amount received to admin",
+          "type": "Integer",
+          "format": "int32",
+          "example": 100,
+          "update": "No"
+        }
+      }
+    }, 
+    "Request": {
+        "required": [
+            "employee_id",
+            "inventory_id"
+        ],
+        "properties": {
+            "_id": {
+                "description": "Unique id of billing",
+                "type": "Object Id",
+                "format": "ObjectId"
+            },
+            "id": {
+                "description": "8 digit unique identifier of any document used by client user",
+                "type": "Integer",
+                "format": "int32",
+                "example": 458712867,
+                "readOnly": true
+            },
+            "status": {
+                "description": "Status of request, Value can be",
+                "type": "string",
+                "value": ["pending", "accepted","rejected"]
+            },
+            "employee_id": {
+                "description": "8 digit unique identifier of employee",
+                "type": "Object Id",
+                "format": "ObjectId",
+                "update": "No",
+                "required": "No"
+            },
+            "inventory_id": {
+                "description": "8 digit unique identifier of inventory",
+                "type": "Object Id",
+                "format": "ObjectId",
+                "update": "No",
+                "required": "No"
+            },
+            "reason": {
+                "description": "Optional Value for accepting or rejecting",
+                "type": "string"
+            }
+        }        
+    }
+}
